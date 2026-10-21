@@ -13,8 +13,8 @@ Send a song name, YouTube link or Spotify track link → bot replies with audio 
 
 ## 1. Get keys
 1. `@BotFather` → `/newbot` → copy **BOT_TOKEN**.
-2. artistbotsapi.bond → Sign in with Google → **API Key** → copy it.
-3. Open **Docs** on the dashboard and confirm the endpoint + parameter names. If they differ from the defaults in `.env.example`, change the `ARTISTBOTS_*` env vars (no code edits needed).
+2. Sanatanibotsapi → Sign in with Google → **API Key** → copy it.
+3. Open **Docs** on the dashboard and confirm the endpoint + parameter names. If they differ from the defaults in `.env.example`, change the `SANATANIBOTS_*` env vars (no code edits needed).
 
 ## 2. Run locally
 ```bash
