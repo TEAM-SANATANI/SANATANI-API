@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: telegram-music-bot
+    runtime: python
+    plan: free
+    region: singapore
+    buildCommand: pip install -r requirements.txt
+    # 1 worker so the URL pinger thread runs only once
+    startCommand: gunicorn app:app --workers 1 --threads 8 --timeout 180 --bind 0.0.0.0:$PORT
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: BOT_TOKEN
+        sync: false
+      - key: ARTISTBOTS_API_KEY
+        sync: false
+      - key: WEBHOOK_SECRET
+        generateValue: true
+      - key: ARTISTBOTS_BASE_URL
+        value: https://artistbotsapi.bond
+      - key: ARTISTBOTS_ENDPOINT
+        value: /api/download
+      - key: PING_INTERVAL
+        value: "600"
+      # PING_URL is optional: Render's RENDER_EXTERNAL_URL is used automatically.
