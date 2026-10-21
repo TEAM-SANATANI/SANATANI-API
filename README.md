@@ -1,4 +1,4 @@
-# Telegram Music Bot (SanataniBots API)
+# (SanataniBots API)
 
 Send a song name, YouTube link or Spotify track link → bot replies with audio (or video via `/video`).
 
